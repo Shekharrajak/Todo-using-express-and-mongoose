@@ -28,7 +28,8 @@ if ( 'development' == app.get( 'env' )) {
  
 app.get( '/', routes.index );
 app.post( '/create', routes.create );
- 
+ // add this line to the routes section
+app.get( '/destroy/:id', routes.destroy );
 http.createServer( app ).listen( app.get( 'port' ), function(){
   console.log( 'Express server listening on port ' + app.get( 'port' ));
 } );
