@@ -37,3 +37,13 @@ exports.destroy = function ( req, res ){
     });
   });
 };
+
+exports.edit = function ( req, res ){
+  Todo.find( function ( err, todos ){
+    res.render( 'edit', {
+        title   : 'Express Todo Example',
+        todos   : todos,
+        current : req.params.id
+    });
+  });
+};

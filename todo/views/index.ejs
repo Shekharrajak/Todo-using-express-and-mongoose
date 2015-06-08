@@ -4,16 +4,11 @@
 <form action="/create" method="post" accept-charset="utf-8">
   <input type="text" name="content" />
 </form>
-// use a loop to show all todo items at the very bottom.
-<% todos.forEach( function( todo ){ %>
-  <p><%= todo.content %></p>
-<% }); %>
-
-// add a delete link in the loop
+ 
 <% todos.forEach( function ( todo ){ %>
   <p>
     <span>
-      <%= todo.content %>
+      <a href="/edit/<%= todo._id %>" title="Update this todo item"><%= todo.content %></a>
     </span>
     <span>
       <a href="/destroy/<%= todo._id %>" title="Delete this todo item">Delete</a>
